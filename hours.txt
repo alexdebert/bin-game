@@ -1,0 +1,3 @@
+## Time tracking
+
+- Setting up environment : 20 minutes
