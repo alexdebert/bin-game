@@ -5,9 +5,19 @@
 // Core
 import React from 'react';
 
+// Components
+import Score from '../Score/Score';
+import Timer from '../Timer/Timer';
+import Game from '../Game/Game';
+
+// Styles
+import './App.scss';
+
 const App = () => (
-  <div className="app-container">
-    <p>Game will be displayed here</p>
+  <div className="AppContainer">
+    <Score />
+    <Game />
+    <Timer />
   </div>
 );
 

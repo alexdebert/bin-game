@@ -1,3 +1,4 @@
 ## Time tracking
 
-- Setting up environment : 20 minutes
+- Setting up environment : 20 minutes.
+- Timer components with actions & reducer / Constant file / Game & Score component first commit: 2 hours.
