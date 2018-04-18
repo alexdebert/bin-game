@@ -25,3 +25,18 @@ body {
 .GameContainer {
   height: 600px;
 }
+
+.BombsContainer {
+  height: 80%;
+}
+
+.BinsList {
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Bin {
+  height: 50%;
+  width: 5%;
+}

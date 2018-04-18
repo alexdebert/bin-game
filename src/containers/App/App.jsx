@@ -4,6 +4,8 @@
 
 // Core
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // Components
 import Score from '../Score/Score';
@@ -13,12 +15,20 @@ import Game from '../Game/Game';
 // Styles
 import './App.scss';
 
-const App = () => (
+const App = props => (
   <div className="AppContainer">
     <Score />
-    <Game />
+    <Game bins={props.bins} />
     <Timer />
   </div>
 );
 
-export default App;
+App.propTypes = {
+  bins: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+};
+
+const mapStateToProps = state => ({
+  bins: state.bins.data,
+});
+
+export default connect(mapStateToProps)(App);

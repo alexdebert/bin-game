@@ -2,3 +2,4 @@
 
 - Setting up environment : 20 minutes.
 - Timer components with actions & reducer / Constant file / Game & Score component first commit: 2 hours.
+- Bins component with shuffle, actions, reducers and style: 2 hours 30 minutes.

@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 
 // Actions
 import { startTimer, countDown } from '../../actions/timerActions';
+import { shuffleBins } from '../../actions/binsActions';
 
 
 class Timer extends Component {
@@ -37,6 +38,7 @@ class Timer extends Component {
     const { remainingSeconds } = this.props;
     this.props.countDown(remainingSeconds);
     if (remainingSeconds === 0) {
+      this.props.shuffleBins(this.props.bins);
       clearInterval(this.timer);
       this.startTimer();
     }
@@ -56,16 +58,20 @@ Timer.propTypes = {
   remainingSeconds: PropTypes.number.isRequired,
   startTimer: PropTypes.func.isRequired,
   countDown: PropTypes.func.isRequired,
+  shuffleBins: PropTypes.func.isRequired,
+  bins: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
 };
 
 const mapStateToProps = state => ({
   remainingSeconds: state.timer.remainingSeconds,
+  bins: state.bins.data,
 });
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
     startTimer,
     countDown,
+    shuffleBins,
   }, dispatch)
 );
 
